@@ -17,7 +17,6 @@ It is written in Robotframework with selenium library.
 -  There's a file in resources/config.robot which is indicating the variable for URL, path to the driver, and file to upload. If you choose to put the driver and file somewhere else, change the path here. However the url should remain same bacause this repo is entirely based on the test cases for that website
 
 
-**Getting Started**
--  To Run the code:
-    - To run specific robot file ```robot .\tests\test_suites_01\TestCase1_register_user.robot ```
-    - To run all the tests from the folder test_suites_01 ```robot .\tests\test_suites_01\Test* ```
+**To Run the code**
+- To run specific robot file ```robot .\tests\test_suites_01\TestCase1_register_user.robot ```
+- To run all the tests from the folder test_suites_01 ```robot .\tests\test_suites_01\Test* ```
