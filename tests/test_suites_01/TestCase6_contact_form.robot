@@ -1,6 +1,6 @@
 *** Settings ***
 Library  SeleniumLibrary
-
+Resource       ../../resources/config.robot
 
 *** Variables ***
 ${page_indicate}   xpath=//*[contains(text(),'Full-Fledged practice website for Automation Engineers')]
@@ -14,13 +14,13 @@ ${file_locator}    xpath=//input[@name='upload_file']
 ${submit_locator}    xpath=//*[@name="submit"]
 ${info_send_success}    xpath=//*[@id="contact-page"]/div[2]/div[1]/div/div[2]
 ${home_button}    xpath=//*[@id="form-section"]/a
-${file_path}      C:\\Tests\\RobotFrameworkPorfolio\\fileUpload.pdf
+
 
 
 *** Test Cases ***
 Open Website and go to contact us
     [Documentation]     Opens the website, open contact us form and verify if page is opened
-    Open Browser    http://automationexercise.com     chrome    executable_path= ../../chromedriver.exe
+    Open Browser    ${BASE_URL}     chrome    executable_path= ${CHROME_DRIVER_PATH}
     Wait Until Page Contains Element    ${page_indicate}    timeout=10s
     Element Should Be Visible   ${page_indicate} 
     Click Element  ${contactus_page}

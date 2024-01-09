@@ -1,5 +1,6 @@
 *** Settings ***
 Library  SeleniumLibrary
+Resource       config.robot
 
 *** Variables ***
 ${page_indicate}   xpath=//*[contains(text(),'Full-Fledged practice website for Automation Engineers')]
@@ -45,7 +46,7 @@ ${login_button}  xpath=//*[@id="form"]/div/div/div[1]/div/form/button
 
 *** Keywords *** 
 Open Website and sign up page
-    Open Browser    http://automationexercise.com     chrome    executable_path= ../../chromedriver.exe
+    Open Browser    ${BASE_URL}     chrome    executable_path= ${CHROME_DRIVER_PATH}
     Wait Until Page Contains Element    ${page_indicate}    timeout=10s
     Element Should Be Visible   ${page_indicate} 
     Wait Until Page Contains Element  ${signup_login_button}

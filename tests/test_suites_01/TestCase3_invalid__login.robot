@@ -1,5 +1,6 @@
 *** Settings ***
 Library  SeleniumLibrary
+Resource       ../../resources/config.robot
 
 
 *** Variables ***
@@ -15,7 +16,7 @@ ${invalid_user_validation}   xpath=//*[@id="form"]/div/div/div[1]/div/form/p
 *** Test Cases ***
 User login with email and password
     [Documentation]     Verify the login is not successful with invalid email and password
-    Open Browser    http://automationexercise.com     chrome    executable_path= ../../chromedriver.exe
+    Open Browser    ${BASE_URL}     chrome    executable_path= ${CHROME_DRIVER_PATH}
     Wait Until Page Contains Element    ${page_indicate}    timeout=10s
     Element Should Be Visible   ${page_indicate} 
     Wait Until Page Contains Element  ${signup_login_button}

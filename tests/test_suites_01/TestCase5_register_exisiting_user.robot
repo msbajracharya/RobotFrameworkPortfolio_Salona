@@ -18,7 +18,7 @@ User login with existing email and password
     ...                After a new user is created then its email and password is used is used again to check the signup validation
     ...                To prevent the dublicate record, the created user is again logged in and deleted 
     Open Website and sign up page 
-    Open Browser    http://automationexercise.com     chrome    executable_path= ../../chromedriver.exe
+    Open Browser    ${BASE_URL}     chrome    executable_path= ${CHROME_DRIVER_PATH}
     Wait Until Page Contains Element    ${page_indicate}    timeout=10s
     Element Should Be Visible   ${page_indicate} 
     Wait Until Page Contains Element  ${signup_login_button}
