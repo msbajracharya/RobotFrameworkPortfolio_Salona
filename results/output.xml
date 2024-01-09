@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.1 (Python 3.11.1 on win32)" generated="20240104 14:39:00.925" rpa="false" schemaversion="3">
+<suite id="s1" name="RobotFrameworkPorfolio" source="C:\Tests\RobotFrameworkPorfolio">
+<suite id="s1-s1" name="Tests" source="C:\Tests\RobotFrameworkPorfolio\tests">
+<suite id="s1-s1-s1" name="Test Suites 01" source="C:\Tests\RobotFrameworkPorfolio\tests\test_suites_01">
+<suite id="s1-s1-s1-s1" name="Register User" source="C:\Tests\RobotFrameworkPorfolio\tests\test_suites_01\register_user.robot">
+<test id="s1-s1-s1-s1-t1" name="Check invoice manager page" line="9">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>chrome</arg>
+<arg>executable_path= C:/Tests/chrome-win64/chromedriver.exe</arg>
+<arg>options=add_argument("--chrome_binary=C:/Tests/chrome-win64/chromedriver.exe")</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20240104 14:39:01.336" level="INFO">Opening browser 'chrome' to base url 'http://automationexercise.com'.</msg>
+<msg timestamp="20240104 14:39:02.496" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<msg timestamp="20240104 14:39:02.499" level="FAIL">WebDriverException: Message: 'chromedriver.exe' executable needs to be in PATH. Please see https://chromedriver.chromium.org/home
+</msg>
+<status status="FAIL" starttime="20240104 14:39:01.334" endtime="20240104 14:39:02.515"/>
+</kw>
+<status status="FAIL" starttime="20240104 14:39:01.332" endtime="20240104 14:39:02.517">WebDriverException: Message: 'chromedriver.exe' executable needs to be in PATH. Please see https://chromedriver.chromium.org/home
+</status>
+</test>
+<status status="FAIL" starttime="20240104 14:39:00.978" endtime="20240104 14:39:02.521"/>
+</suite>
+<status status="FAIL" starttime="20240104 14:39:00.974" endtime="20240104 14:39:02.526"/>
+</suite>
+<status status="FAIL" starttime="20240104 14:39:00.969" endtime="20240104 14:39:02.530"/>
+</suite>
+<status status="FAIL" starttime="20240104 14:39:00.932" endtime="20240104 14:39:02.534"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="RobotFrameworkPorfolio">RobotFrameworkPorfolio</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1" name="Tests">RobotFrameworkPorfolio.Tests</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1-s1" name="Test Suites 01">RobotFrameworkPorfolio.Tests.Test Suites 01</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1-s1-s1" name="Register User">RobotFrameworkPorfolio.Tests.Test Suites 01.Register User</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
