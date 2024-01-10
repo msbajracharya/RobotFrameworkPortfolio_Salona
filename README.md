@@ -1,4 +1,5 @@
-This is a Robotframework git repository that includes the testcases from https://automationexercise.com/test_cases
+This is a public repository I created showcasing my skills and knowledge in Robotframework. This is a Robotframework git repository that includes the testcases from https://automationexercise.com/test_cases that has been developed from scratch. This is entirely for practise purpose and whoever wanting to learn can use it too. In addition to that if there's any suggestion and improvement you beleieve I can make here, feel free to email be msbajracharya.salona@gmail.com
+
 It is written in Robotframework with selenium library.
 
 **Pre-requisite**
