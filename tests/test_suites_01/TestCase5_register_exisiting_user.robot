@@ -18,7 +18,7 @@ User login with existing email and password
     ...                After a new user is created then its email and password is used is used again to check the signup validation
     ...                To prevent the dublicate record, the created user is again logged in and deleted 
     Open Website and sign up page 
-    Open Browser    ${BASE_URL}     chrome    executable_path= ${CHROME_DRIVER_PATH}
+    Open browser and install add_extension to block the ads
     Wait Until Page Contains Element    ${page_indicate}    timeout=10s
     Element Should Be Visible   ${page_indicate} 
     Wait Until Page Contains Element  ${signup_login_button}
@@ -38,3 +38,4 @@ User login with existing email and password
     ${actual_text4}  Get Text  ${delete_success}
     Should Be Equal As Strings  ${actual_text4}   ACCOUNT DELETED!
     Click Element  ${continue_button}
+    

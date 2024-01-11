@@ -1,6 +1,5 @@
 *** Settings ***
 Resource       new_user_creation.robot
-Resource       config.robot
 
 
 *** Variables ***
@@ -14,7 +13,7 @@ ${login_button}  xpath=//*[@id="form"]/div/div/div[1]/div/form/button
 User login with email and password
     [Documentation]     This test case is checking the successful login of the page with valid username and password. Here
     ...                same email and password is used in the login  which is created in resources/new_user_creation.robot
-    Open Browser    ${BASE_URL}     chrome    executable_path= ${CHROME_DRIVER_PATH}
+    Open browser and install add_extension to block the ads
     Wait Until Page Contains Element    ${page_indicate}    timeout=10s
     Element Should Be Visible   ${page_indicate} 
     Wait Until Page Contains Element  ${signup_login_button}
@@ -26,4 +25,5 @@ User login with email and password
     Click Element  ${login_button}
     ${actual_text3}  Get Text  ${loggedin_user}
     Should Be Equal As Strings  ${actual_text3}   Logged in as ${user_name}
+    
     

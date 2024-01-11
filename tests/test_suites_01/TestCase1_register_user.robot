@@ -1,6 +1,7 @@
 *** Settings ***
 Library  SeleniumLibrary
 Resource       ../../resources/config.robot
+Resource       ../../resources/disableAds.robot
 
 *** Variables ***
 ${page_indicate}   xpath=//*[contains(text(),'Full-Fledged practice website for Automation Engineers')]
@@ -41,7 +42,7 @@ ${delete_success}  xpath=//*[@id="form"]/div/div/div/h2/b
 *** Test Cases ***
 Open Website and sign up page
     [Documentation]     Opens the website, checks if the page was successfully opened and go to Login/signup page
-    Open Browser   ${BASE_URL}     chrome    executable_path= ${CHROME_DRIVER_PATH}
+    Open browser and install add_extension to block the ads
     Wait Until Page Contains Element    ${page_indicate}    timeout=10s
     Element Should Be Visible   ${page_indicate} 
     Wait Until Page Contains Element  ${signup_login_button}
@@ -106,3 +107,4 @@ User info for new user
     ${actual_text4}  Get Text  ${delete_success}
     Should Be Equal As Strings  ${actual_text4}   ACCOUNT DELETED!
     Click Element  ${continue_button}
+    

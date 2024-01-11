@@ -1,11 +1,12 @@
 *** Settings ***
 Library  SeleniumLibrary
 Resource       ../../resources/config.robot
+Resource       ../../resources/disableAds.robot
 
 *** Variables ***
 ${page_indicate}   xpath=//*[contains(text(),'Full-Fledged practice website for Automation Engineers')]
 ${product_page}   xpath=//*[@id="header"]/div/div/div/div[2]/div/ul/li[2]/a
-${product_page_indicate}    xpath=/html/body/section[2]/div/div/div[2]/div/h2/text()
+${product_page_indicate}    xpath=/html/body/section[2]/div/div/div[2]/div/h2
 ${first_product_view}    xpath=/html/body/section[2]/div/div/div[2]/div/div[2]/div/div[2]/ul/li/a
 ${first_product_detail_page}    xpath=//div[@class="product-information"]
 ${product_name}    xpath=/html/body/section/div/div/div[2]/div[2]/div[2]/div/h2
@@ -21,7 +22,9 @@ ${brand}    xpath=/html/body/section/div/div/div[2]/div[2]/div[2]/div/p[4]
 *** Test Cases ***
 Products page is opened successfully
     [Documentation]     Opens the website, open products page and verify all product details
-    Open Browser    ${BASE_URL}     chrome    executable_path= ${CHROME_DRIVER_PATH}
+    ...                 for now it is hard coded data compared with the product details
+      
+    Open browser and install add_extension to block the ads
     Wait Until Page Contains Element    ${page_indicate}    timeout=10s
     Element Should Be Visible   ${page_indicate} 
     
@@ -49,5 +52,6 @@ Products page is opened successfully
 
     ${actual_text7}    Get Text    ${brand}
     Should Be Equal As Strings   ${actual_text7}  Brand: Polo
+    
 
 

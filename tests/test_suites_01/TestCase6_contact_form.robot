@@ -1,6 +1,7 @@
 *** Settings ***
 Library  SeleniumLibrary
 Resource       ../../resources/config.robot
+Resource       ../../resources/disableAds.robot
 
 *** Variables ***
 ${page_indicate}   xpath=//*[contains(text(),'Full-Fledged practice website for Automation Engineers')]
@@ -20,7 +21,7 @@ ${home_button}    xpath=//*[@id="form-section"]/a
 *** Test Cases ***
 Open Website and go to contact us
     [Documentation]     Opens the website, open contact us form and verify if page is opened
-    Open Browser    ${BASE_URL}     chrome    executable_path= ${CHROME_DRIVER_PATH}
+    Open browser and install add_extension to block the ads
     Wait Until Page Contains Element    ${page_indicate}    timeout=10s
     Element Should Be Visible   ${page_indicate} 
     Click Element  ${contactus_page}
@@ -44,3 +45,4 @@ Fill up contact us form
     Click Element    ${home_button}
     Wait Until Page Contains Element    ${page_indicate}    timeout=10s
     Element Should Be Visible   ${page_indicate} 
+    

@@ -1,6 +1,7 @@
 *** Settings ***
 Library  SeleniumLibrary
 Resource       ../../resources/config.robot
+Resource       ../../resources/disableAds.robot
 
 
 *** Variables ***
@@ -16,7 +17,7 @@ ${invalid_user_validation}   xpath=//*[@id="form"]/div/div/div[1]/div/form/p
 *** Test Cases ***
 User login with email and password
     [Documentation]     Verify the login is not successful with invalid email and password
-    Open Browser    ${BASE_URL}     chrome    executable_path= ${CHROME_DRIVER_PATH}
+    Open browser and install add_extension to block the ads
     Wait Until Page Contains Element    ${page_indicate}    timeout=10s
     Element Should Be Visible   ${page_indicate} 
     Wait Until Page Contains Element  ${signup_login_button}
@@ -28,4 +29,5 @@ User login with email and password
     Click Element  ${login_button}
     ${actual_text2}  Get Text  ${invalid_user_validation}
     Should Be Equal As Strings  ${actual_text2}   Your email or password is incorrect!
+    
     

@@ -1,6 +1,7 @@
 *** Settings ***
 Library  SeleniumLibrary
 Resource       config.robot
+Resource       disableAds.robot
 
 *** Variables ***
 ${page_indicate}   xpath=//*[contains(text(),'Full-Fledged practice website for Automation Engineers')]
@@ -46,7 +47,8 @@ ${login_button}  xpath=//*[@id="form"]/div/div/div[1]/div/form/button
 
 *** Keywords *** 
 Open Website and sign up page
-    Open Browser    ${BASE_URL}     chrome    executable_path= ${CHROME_DRIVER_PATH}
+    [Documentation]     This test case is creating a new user for the website. Some of the main test cases require a new user.
+    Open browser and install add_extension to block the ads
     Wait Until Page Contains Element    ${page_indicate}    timeout=10s
     Element Should Be Visible   ${page_indicate} 
     Wait Until Page Contains Element  ${signup_login_button}

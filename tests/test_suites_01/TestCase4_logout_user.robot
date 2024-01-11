@@ -17,3 +17,4 @@ User login with email and password
     Click Element    ${logout_user}
     ${actual_text1}  Get Text  ${login_page}
     Should Be Equal As Strings  ${actual_text1}   Login to your account
+    
