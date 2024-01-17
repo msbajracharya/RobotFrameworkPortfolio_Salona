@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.0.1 (Python 3.11.1 on win32)" generated="20240117 14:15:59.900" rpa="false" schemaversion="3">
-<suite id="s1" name="TestCase9 search product" source="C:\Tests\RobotFrameworkPorfolio\tests\test_suites_01\TestCase9_search_product.robot">
-<test id="s1-t1" name="Search product and check products are matching or not" line="32">
+<robot generator="Robot 6.0.1 (Python 3.11.1 on win32)" generated="20240117 14:52:42.886" rpa="false" schemaversion="3">
+<suite id="s1" name="TestCase10 Subscription" source="C:\Tests\RobotFrameworkPorfolio\tests\test_suites_01\TestCase10_Subscription.robot">
+<test id="s1-t1" name="Check for the Subsciption and add subsciption email" line="14">
 <kw name="Open browser and install add_extension to block the ads" library="disableAds">
 <doc>Since we are automating a website which is published in the internet, and the website contains ads
 like in any normal websites. The ads blocks the flow of automation. So to avoid this, a browser extension
@@ -12,147 +12,131 @@ on every browser opened.</doc>
 <arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
 <arg>sys, selenium.webdriver</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20240117 14:16:00.319" level="INFO">${ChromeOptions} = &lt;selenium.webdriver.chrome.options.Options object at 0x0000015EF9EB3AD0&gt;</msg>
-<status status="PASS" starttime="20240117 14:16:00.319" endtime="20240117 14:16:00.319"/>
+<msg timestamp="20240117 14:52:43.269" level="INFO">${ChromeOptions} = &lt;selenium.webdriver.chrome.options.Options object at 0x0000021B6BD16A10&gt;</msg>
+<status status="PASS" starttime="20240117 14:52:43.269" endtime="20240117 14:52:43.269"/>
 </kw>
 <kw name="Call Method" library="BuiltIn">
 <arg>${ChromeOptions}</arg>
 <arg>add_extension</arg>
 <arg>${adblocker_crx_path}</arg>
 <doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" starttime="20240117 14:16:00.319" endtime="20240117 14:16:00.320"/>
+<status status="PASS" starttime="20240117 14:52:43.270" endtime="20240117 14:52:43.270"/>
 </kw>
 <kw name="Evaluate" library="BuiltIn">
 <var>${dc}</var>
 <arg>sys.modules['selenium.webdriver'].DesiredCapabilities.CHROME</arg>
 <arg>sys, selenium.webdriver</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20240117 14:16:00.320" level="INFO">${dc} = {'browserName': 'chrome'}</msg>
-<status status="PASS" starttime="20240117 14:16:00.320" endtime="20240117 14:16:00.320"/>
+<msg timestamp="20240117 14:52:43.270" level="INFO">${dc} = {'browserName': 'chrome'}</msg>
+<status status="PASS" starttime="20240117 14:52:43.270" endtime="20240117 14:52:43.270"/>
 </kw>
 <kw name="Call Method" library="BuiltIn">
 <var>${Options}</var>
 <arg>${ChromeOptions}</arg>
 <arg>to_capabilities</arg>
 <doc>Calls the named method of the given object with the provided arguments.</doc>
-<msg timestamp="20240117 14:16:00.391" level="INFO">${Options} = {'browserName': 'chrome', 'pageLoadStrategy': 'normal', 'goog:chromeOptions': {'extensions': ['Q3IyNAMAAAAYBAAAEqwECqYCMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAj/u/XDdjlDyw7gHEtaaasZ9GdG8WOKAyJzXd8...</msg>
-<status status="PASS" starttime="20240117 14:16:00.321" endtime="20240117 14:16:00.391"/>
+<msg timestamp="20240117 14:52:43.346" level="INFO">${Options} = {'browserName': 'chrome', 'pageLoadStrategy': 'normal', 'goog:chromeOptions': {'extensions': ['Q3IyNAMAAAAYBAAAEqwECqYCMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAj/u/XDdjlDyw7gHEtaaasZ9GdG8WOKAyJzXd8...</msg>
+<status status="PASS" starttime="20240117 14:52:43.271" endtime="20240117 14:52:43.346"/>
 </kw>
 <kw name="Create Webdriver" library="SeleniumLibrary">
 <arg>Chrome</arg>
 <arg>chrome_options=${chrome_options}</arg>
 <arg>desired_capabilities=${dc}</arg>
 <doc>Creates an instance of Selenium WebDriver.</doc>
-<msg timestamp="20240117 14:16:00.392" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
-<status status="PASS" starttime="20240117 14:16:00.391" endtime="20240117 14:16:03.985"/>
+<msg timestamp="20240117 14:52:43.347" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20240117 14:52:43.347" endtime="20240117 14:52:46.733"/>
 </kw>
 <kw name="Go To" library="SeleniumLibrary">
 <arg>${BASE_URL}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20240117 14:16:03.986" level="INFO">Opening url 'http://automationexercise.com'</msg>
-<status status="PASS" starttime="20240117 14:16:03.985" endtime="20240117 14:16:09.534"/>
+<msg timestamp="20240117 14:52:46.733" level="INFO">Opening url 'http://automationexercise.com'</msg>
+<status status="PASS" starttime="20240117 14:52:46.733" endtime="20240117 14:52:52.443"/>
 </kw>
-<status status="PASS" starttime="20240117 14:16:00.318" endtime="20240117 14:16:09.534"/>
+<status status="PASS" starttime="20240117 14:52:43.269" endtime="20240117 14:52:52.444"/>
 </kw>
 <kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
 <arg>${page_indicate}</arg>
 <arg>timeout=10s</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20240117 14:16:09.535" endtime="20240117 14:16:09.564"/>
+<status status="PASS" starttime="20240117 14:52:52.445" endtime="20240117 14:52:52.473"/>
 </kw>
 <kw name="Element Should Be Visible" library="SeleniumLibrary">
 <arg>${page_indicate}</arg>
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<msg timestamp="20240117 14:16:09.605" level="INFO">Element 'xpath=//*[contains(text(),'Full-Fledged practice website for Automation Engineers')]' is displayed.</msg>
-<status status="PASS" starttime="20240117 14:16:09.565" endtime="20240117 14:16:09.605"/>
+<msg timestamp="20240117 14:52:52.516" level="INFO">Element 'xpath=//*[contains(text(),'Full-Fledged practice website for Automation Engineers')]' is displayed.</msg>
+<status status="PASS" starttime="20240117 14:52:52.474" endtime="20240117 14:52:52.516"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.scrollTo(0, document.body.scrollHeight);</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20240117 14:52:52.518" level="INFO">Executing JavaScript:
+window.scrollTo(0, document.body.scrollHeight);
+Without any arguments.</msg>
+<status status="PASS" starttime="20240117 14:52:52.516" endtime="20240117 14:52:52.529"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${actual_text}</var>
+<arg>${verify_subsciption}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240117 14:52:52.577" level="INFO">${actual_text} = SUBSCRIPTION</msg>
+<status status="PASS" starttime="20240117 14:52:52.530" endtime="20240117 14:52:52.577"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${actual_text}</arg>
+<arg>SUBSCRIPTION</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20240117 14:52:52.578" endtime="20240117 14:52:52.578"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${subsciption_email_field}</arg>
+<arg>test.t@t.coo</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240117 14:52:52.580" level="INFO">Typing text 'test.t@t.coo' into text field 'xpath=//*[@id='susbscribe_email']'.</msg>
+<status status="PASS" starttime="20240117 14:52:52.579" endtime="20240117 14:52:52.758"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
-<arg>${product_page}</arg>
+<arg>${subsciption_email_submit}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240117 14:16:09.607" level="INFO">Clicking element 'xpath=//*[@id="header"]/div/div/div/div[2]/div/ul/li[2]/a'.</msg>
-<status status="PASS" starttime="20240117 14:16:09.606" endtime="20240117 14:16:15.882"/>
+<msg timestamp="20240117 14:52:52.759" level="INFO">Clicking element 'xpath=//*[@id='subscribe']'.</msg>
+<status status="PASS" starttime="20240117 14:52:52.758" endtime="20240117 14:52:52.855"/>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${element_classes}</var>
+<arg>css=.col-md-9.form-group</arg>
+<arg>class</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20240117 14:52:52.897" level="INFO">${element_classes} = col-md-9 form-group</msg>
+<status status="PASS" starttime="20240117 14:52:52.856" endtime="20240117 14:52:52.897"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${hide_class_removed}</var>
+<arg>'hide' not in '${element_classes}'.split(' ')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240117 14:52:52.898" level="INFO">${hide_class_removed} = True</msg>
+<status status="PASS" starttime="20240117 14:52:52.898" endtime="20240117 14:52:52.898"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${hide_class_removed}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20240117 14:52:52.898" endtime="20240117 14:52:52.899"/>
 </kw>
 <kw name="Get Text" library="SeleniumLibrary">
 <var>${actual_text1}</var>
-<arg>${product_page_indicate}</arg>
+<arg>${subsciption_submit_success}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20240117 14:16:15.926" level="INFO">${actual_text1} = ALL PRODUCTS</msg>
-<status status="PASS" starttime="20240117 14:16:15.883" endtime="20240117 14:16:15.926"/>
+<msg timestamp="20240117 14:52:52.934" level="INFO">${actual_text1} = You have been successfully subscribed!</msg>
+<status status="PASS" starttime="20240117 14:52:52.899" endtime="20240117 14:52:52.934"/>
 </kw>
 <kw name="Should Be Equal As Strings" library="BuiltIn">
 <arg>${actual_text1}</arg>
-<arg>ALL PRODUCTS</arg>
+<arg>You have been successfully subscribed!</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="PASS" starttime="20240117 14:16:15.927" endtime="20240117 14:16:15.927"/>
+<status status="PASS" starttime="20240117 14:52:52.935" endtime="20240117 14:52:52.936"/>
 </kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${search_field}</arg>
-<arg>short</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20240117 14:16:15.929" level="INFO">Typing text 'short' into text field 'xpath=//*[@id="search_product"]'.</msg>
-<status status="PASS" starttime="20240117 14:16:15.928" endtime="20240117 14:16:16.094"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${search_button}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240117 14:16:16.095" level="INFO">Clicking element 'xpath=//*[@id="submit_search"]'.</msg>
-<status status="PASS" starttime="20240117 14:16:16.095" endtime="20240117 14:16:18.172"/>
-</kw>
-<kw name="Get Element Count" library="SeleniumLibrary">
-<var>${count}</var>
-<arg>(//div[@class='col-sm-4'])</arg>
-<doc>Returns the number of elements matching ``locator``.</doc>
-<msg timestamp="20240117 14:16:18.195" level="INFO">${count} = 2</msg>
-<status status="PASS" starttime="20240117 14:16:18.173" endtime="20240117 14:16:18.195"/>
-</kw>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${text}</var>
-<arg>xpath=${product_list_front}${count}${product_list_back}</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20240117 14:16:18.227" level="INFO">${text} = Sleeves Top and Short - Blue &amp; Pink</msg>
-<status status="PASS" starttime="20240117 14:16:18.196" endtime="20240117 14:16:18.227"/>
-</kw>
-<for flavor="IN RANGE">
-<var>${index}</var>
-<value>2</value>
-<value>${count}+1</value>
-<iter>
-<var name="${index}">2</var>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${text1}</var>
-<arg>xpath=${product_list_front}${index}${product_list_back}</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20240117 14:16:18.254" level="INFO">${text1} = Sleeves Top and Short - Blue &amp; Pink</msg>
-<status status="PASS" starttime="20240117 14:16:18.229" endtime="20240117 14:16:18.254"/>
-</kw>
-<kw name="Log" library="BuiltIn">
-<arg>text ss${index}: ${text1}</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20240117 14:16:18.255" level="INFO">text ss2: Sleeves Top and Short - Blue &amp; Pink</msg>
-<status status="PASS" starttime="20240117 14:16:18.254" endtime="20240117 14:16:18.255"/>
-</kw>
-<kw name="Should Contain" library="BuiltIn">
-<arg>${text1}</arg>
-<arg>short</arg>
-<arg>ignore_case=${True}</arg>
-<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" starttime="20240117 14:16:18.255" endtime="20240117 14:16:18.255"/>
-</kw>
-<status status="PASS" starttime="20240117 14:16:18.228" endtime="20240117 14:16:18.255"/>
-</iter>
-<status status="PASS" starttime="20240117 14:16:18.228" endtime="20240117 14:16:18.255"/>
-</for>
-<kw name="Sleep" library="BuiltIn">
-<arg>5s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20240117 14:16:23.257" level="INFO">Slept 5 seconds</msg>
-<status status="PASS" starttime="20240117 14:16:18.256" endtime="20240117 14:16:23.257"/>
-</kw>
-<doc>Opens the website, open search page and search for product verify all product details
-for now it is hard coded data compared with the product details</doc>
-<status status="PASS" starttime="20240117 14:16:00.317" endtime="20240117 14:16:23.258"/>
+<doc>Opens the website, Scroll to footer and add subsciption email. Verify success text is visible</doc>
+<status status="PASS" starttime="20240117 14:52:43.267" endtime="20240117 14:52:52.936"/>
 </test>
-<status status="PASS" starttime="20240117 14:15:59.903" endtime="20240117 14:16:23.260"/>
+<status status="PASS" starttime="20240117 14:52:42.888" endtime="20240117 14:52:52.939"/>
 </suite>
 <statistics>
 <total>
@@ -161,7 +145,7 @@ for now it is hard coded data compared with the product details</doc>
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="TestCase9 search product">TestCase9 search product</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="TestCase10 Subscription">TestCase10 Subscription</stat>
 </suite>
 </statistics>
 <errors>
