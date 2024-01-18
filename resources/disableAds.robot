@@ -13,5 +13,9 @@ Open browser and install add_extension to block the ads
     Call Method    ${ChromeOptions}    add_extension    ${adblocker_crx_path}
     ${dc}   Evaluate    sys.modules['selenium.webdriver'].DesiredCapabilities.CHROME  sys, selenium.webdriver
     ${Options}=     Call Method         ${ChromeOptions}    to_capabilities      
-    Create Webdriver    Chrome    chrome_options=${chrome_options}          desired_capabilities=${dc} 
+    Create Webdriver    Chrome    chrome_options=${chrome_options}          desired_capabilities=${dc}  
+
+    #It takes some time for the adblocker to get installed so have put a hard sleep here for now. 
+    #Need to figure out how to use explicit wait here
+    Sleep     10s
     Go To    ${BASE_URL}
