@@ -4,7 +4,7 @@
 
 *** Variables ***
 ${BASE_URL}         http://automationexercise.com    #Do Not Change This, this automation is created for this website only
-${CHROME_DRIVER_PATH}    ../../chromedriver.exe
+${CHROME_DRIVER_PATH}    ../../chromedriver
 ${adblocker_crx_path}    /workspaces/RobotFrameworkPortfolio_Salona/AdBlock.crx
 
 #variable that is used for Test case 6
