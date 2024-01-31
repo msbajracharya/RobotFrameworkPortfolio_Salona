@@ -3,7 +3,7 @@ Library    SeleniumLibrary
 
 *** Variables ***
 ${URL}    https://www.google.com
-${CHROMEDRIVER_PATH}    /workspaces/RobotFrameworkPortfolio_Salona/chromedriver
+${CHROMEDRIVER_PATH}    /workspaces/RobotFrameworkPortfolio_Salona/chromedriver.exe
 
 *** Test Cases ***
 Open Chrome Browser With Path To ChromeDriver
