@@ -2,14 +2,10 @@
 Library    SeleniumLibrary
 
 *** Variables ***
-${URL}    https://www.example.com
+${URL}    https://www.google.com
 ${CHROMEDRIVER_PATH}    ../../chromedriver
-${EXTENSION_PATH}    /workspaces/RobotFrameworkPortfolio_Salona/AdBlock.crx
 
 *** Test Cases ***
-Open Chrome Browser In Headless Mode With Adblock Extension
-    ${chrome_options}=    Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys, selenium.webdriver
-    Call Method    ${ChromeOptions}    add_extension    ${EXTENSION_PATH}
-    Create Webdriver    Chrome    chrome_options=${chrome_options}
-    Go To    ${URL}
+Open Chrome Browser With Path To ChromeDriver
+    Open Browser    ${URL}    Chrome    executable_path=${CHROMEDRIVER_PATH}
     Close Browser
