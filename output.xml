@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1.1 (Python 3.12.0 on linux)" generated="20240131 15:02:36.082" rpa="false" schemaversion="4">
+<robot generator="Robot 6.1.1 (Python 3.12.0 on linux)" generated="20240131 15:12:09.508" rpa="false" schemaversion="4">
 <suite id="s1" name="TestCase1 register user" source="/workspaces/RobotFrameworkPortfolio_Salona/tests/test_suites_01/TestCase1_register_user.robot">
 <test id="s1-t1" name="Open Website and sign up page" line="43">
 <kw name="Open browser and install add_extension to block the ads" library="disableAds">
@@ -12,312 +12,316 @@ on every browser opened.</doc>
 <arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
 <arg>sys, selenium.webdriver</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20240131 15:02:36.254" level="INFO">${ChromeOptions} = &lt;selenium.webdriver.chrome.options.Options object at 0x7fe26a454740&gt;</msg>
-<status status="PASS" starttime="20240131 15:02:36.254" endtime="20240131 15:02:36.255"/>
+<msg timestamp="20240131 15:12:09.726" level="INFO">${ChromeOptions} = &lt;selenium.webdriver.chrome.options.Options object at 0x7f28288f1b80&gt;</msg>
+<status status="PASS" starttime="20240131 15:12:09.725" endtime="20240131 15:12:09.726"/>
 </kw>
 <kw name="Call Method" library="BuiltIn">
 <arg>${ChromeOptions}</arg>
 <arg>add_extension</arg>
 <arg>${adblocker_crx_path}</arg>
 <doc>Calls the named method of the given object with the provided arguments.</doc>
-<msg timestamp="20240131 15:02:36.255" level="FAIL">Calling method 'add_extension' failed: OSError: Path to the extension doesn't exist</msg>
-<status status="FAIL" starttime="20240131 15:02:36.255" endtime="20240131 15:02:36.261"/>
+<status status="PASS" starttime="20240131 15:12:09.726" endtime="20240131 15:12:09.726"/>
 </kw>
 <kw name="Evaluate" library="BuiltIn">
 <var>${dc}</var>
 <arg>sys.modules['selenium.webdriver'].DesiredCapabilities.CHROME</arg>
 <arg>sys, selenium.webdriver</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="NOT RUN" starttime="20240131 15:02:36.261" endtime="20240131 15:02:36.261"/>
+<msg timestamp="20240131 15:12:09.726" level="INFO">${dc} = {'browserName': 'chrome'}</msg>
+<status status="PASS" starttime="20240131 15:12:09.726" endtime="20240131 15:12:09.726"/>
 </kw>
 <kw name="Call Method" library="BuiltIn">
 <var>${Options}</var>
 <arg>${ChromeOptions}</arg>
 <arg>to_capabilities</arg>
 <doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="NOT RUN" starttime="20240131 15:02:36.261" endtime="20240131 15:02:36.261"/>
+<msg timestamp="20240131 15:12:09.771" level="INFO">${Options} = {'browserName': 'chrome', 'pageLoadStrategy': 'normal', 'goog:chromeOptions': {'extensions': ['Q3IyNAMAAAAYBAAAEqwECqYCMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAj/u/XDdjlDyw7gHEtaaasZ9GdG8WOKAyJzXd8...</msg>
+<status status="PASS" starttime="20240131 15:12:09.726" endtime="20240131 15:12:09.771"/>
 </kw>
 <kw name="Create Webdriver" library="SeleniumLibrary">
 <arg>Chrome</arg>
 <arg>chrome_options=${chrome_options}</arg>
 <arg>desired_capabilities=${dc}</arg>
 <doc>Creates an instance of Selenium WebDriver.</doc>
-<status status="NOT RUN" starttime="20240131 15:02:36.261" endtime="20240131 15:02:36.261"/>
+<msg timestamp="20240131 15:12:09.772" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<msg timestamp="20240131 15:12:09.772" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<msg timestamp="20240131 15:12:09.772" level="FAIL">TypeError: WebDriver.__init__() got an unexpected keyword argument 'chrome_options'</msg>
+<status status="FAIL" starttime="20240131 15:12:09.771" endtime="20240131 15:12:09.775"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>10s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" starttime="20240131 15:02:36.261" endtime="20240131 15:02:36.261"/>
+<status status="NOT RUN" starttime="20240131 15:12:09.775" endtime="20240131 15:12:09.775"/>
 </kw>
 <kw name="Go To" library="SeleniumLibrary">
 <arg>${BASE_URL}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="NOT RUN" starttime="20240131 15:02:36.261" endtime="20240131 15:02:36.261"/>
+<status status="NOT RUN" starttime="20240131 15:12:09.775" endtime="20240131 15:12:09.775"/>
 </kw>
-<status status="FAIL" starttime="20240131 15:02:36.254" endtime="20240131 15:02:36.261"/>
+<status status="FAIL" starttime="20240131 15:12:09.725" endtime="20240131 15:12:09.776"/>
 </kw>
 <kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
 <arg>${page_indicate}</arg>
 <arg>timeout=10s</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="NOT RUN" starttime="20240131 15:02:36.261" endtime="20240131 15:02:36.262"/>
+<status status="NOT RUN" starttime="20240131 15:12:09.776" endtime="20240131 15:12:09.776"/>
 </kw>
 <kw name="Element Should Be Visible" library="SeleniumLibrary">
 <arg>${page_indicate}</arg>
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="NOT RUN" starttime="20240131 15:02:36.262" endtime="20240131 15:02:36.262"/>
+<status status="NOT RUN" starttime="20240131 15:12:09.776" endtime="20240131 15:12:09.776"/>
 </kw>
 <kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
 <arg>${signup_login_button}</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="NOT RUN" starttime="20240131 15:02:36.263" endtime="20240131 15:02:36.263"/>
+<status status="NOT RUN" starttime="20240131 15:12:09.776" endtime="20240131 15:12:09.776"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${signup_login_button}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20240131 15:02:36.263" endtime="20240131 15:02:36.263"/>
+<status status="NOT RUN" starttime="20240131 15:12:09.776" endtime="20240131 15:12:09.776"/>
 </kw>
 <doc>Opens the website, checks if the page was successfully opened and go to Login/signup page</doc>
-<status status="FAIL" starttime="20240131 15:02:36.253" endtime="20240131 15:02:36.263">Calling method 'add_extension' failed: OSError: Path to the extension doesn't exist</status>
+<status status="FAIL" starttime="20240131 15:12:09.724" endtime="20240131 15:12:09.777">TypeError: WebDriver.__init__() got an unexpected keyword argument 'chrome_options'</status>
 </test>
 <test id="s1-t2" name="Signup for new user" line="53">
 <kw name="Element Should Be Visible" library="SeleniumLibrary">
 <arg>${signup_text_locator}</arg>
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<msg timestamp="20240131 15:02:36.264" level="INFO">Cannot capture screenshot because no browser is open.</msg>
-<msg timestamp="20240131 15:02:36.265" level="FAIL">No browser is open.</msg>
-<status status="FAIL" starttime="20240131 15:02:36.264" endtime="20240131 15:02:36.270"/>
+<msg timestamp="20240131 15:12:09.779" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<msg timestamp="20240131 15:12:09.779" level="FAIL">No browser is open.</msg>
+<status status="FAIL" starttime="20240131 15:12:09.778" endtime="20240131 15:12:09.781"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${new_user_name_field_locator}</arg>
 <arg>${user_name}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20240131 15:02:36.271" endtime="20240131 15:02:36.271"/>
+<status status="NOT RUN" starttime="20240131 15:12:09.781" endtime="20240131 15:12:09.782"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${new_user_email_field_locator}</arg>
 <arg>${user_email}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20240131 15:02:36.271" endtime="20240131 15:02:36.271"/>
+<status status="NOT RUN" starttime="20240131 15:12:09.782" endtime="20240131 15:12:09.782"/>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <arg>${signup_button}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20240131 15:02:36.271" endtime="20240131 15:02:36.271"/>
+<status status="NOT RUN" starttime="20240131 15:12:09.782" endtime="20240131 15:12:09.782"/>
 </kw>
 <kw name="Element Should Be Visible" library="SeleniumLibrary">
 <arg>${detail_info_page}</arg>
 <arg>timeout=10s</arg>
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="NOT RUN" starttime="20240131 15:02:36.271" endtime="20240131 15:02:36.271"/>
+<status status="NOT RUN" starttime="20240131 15:12:09.782" endtime="20240131 15:12:09.782"/>
 </kw>
 <kw name="Get Text" library="SeleniumLibrary">
 <var>${actual_text}</var>
 <arg>${detail_info_page}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20240131 15:02:36.271" endtime="20240131 15:02:36.271"/>
+<status status="NOT RUN" starttime="20240131 15:12:09.783" endtime="20240131 15:12:09.783"/>
 </kw>
 <kw name="Should Be Equal As Strings" library="BuiltIn">
 <arg>${actual_text}</arg>
 <arg>ENTER ACCOUNT INFORMATION</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="NOT RUN" starttime="20240131 15:02:36.272" endtime="20240131 15:02:36.272"/>
+<status status="NOT RUN" starttime="20240131 15:12:09.783" endtime="20240131 15:12:09.783"/>
 </kw>
 <doc>Check if the signup page is opened, and fill up the username and email in the signup form</doc>
-<status status="FAIL" starttime="20240131 15:02:36.263" endtime="20240131 15:02:36.272">No browser is open.</status>
+<status status="FAIL" starttime="20240131 15:12:09.777" endtime="20240131 15:12:09.783">No browser is open.</status>
 </test>
 <test id="s1-t3" name="User info for new user" line="64">
 <kw name="Get Value" library="SeleniumLibrary">
 <var>${actual_text}</var>
 <arg>${new_user_name_field_locator}</arg>
 <doc>Returns the value attribute of the element identified by ``locator``.</doc>
-<msg timestamp="20240131 15:02:36.273" level="INFO">Cannot capture screenshot because no browser is open.</msg>
-<msg timestamp="20240131 15:02:36.273" level="FAIL">No browser is open.</msg>
-<status status="FAIL" starttime="20240131 15:02:36.273" endtime="20240131 15:02:36.274"/>
+<msg timestamp="20240131 15:12:09.787" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<msg timestamp="20240131 15:12:09.787" level="FAIL">No browser is open.</msg>
+<status status="FAIL" starttime="20240131 15:12:09.786" endtime="20240131 15:12:09.788"/>
 </kw>
 <kw name="Should Be Equal As Strings" library="BuiltIn">
 <arg>${actual_text}</arg>
 <arg>${user_name}</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="NOT RUN" starttime="20240131 15:02:36.274" endtime="20240131 15:02:36.274"/>
+<status status="NOT RUN" starttime="20240131 15:12:09.788" endtime="20240131 15:12:09.788"/>
 </kw>
 <kw name="Get Value" library="SeleniumLibrary">
 <var>${actual_text1}</var>
 <arg>${new_user_email_disabled}</arg>
 <doc>Returns the value attribute of the element identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20240131 15:02:36.274" endtime="20240131 15:02:36.274"/>
+<status status="NOT RUN" starttime="20240131 15:12:09.788" endtime="20240131 15:12:09.789"/>
 </kw>
 <kw name="Should Be Equal As Strings" library="BuiltIn">
 <arg>${actual_text1}</arg>
 <arg>${user_email}</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="NOT RUN" starttime="20240131 15:02:36.274" endtime="20240131 15:02:36.274"/>
+<status status="NOT RUN" starttime="20240131 15:12:09.789" endtime="20240131 15:12:09.789"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${passwordfield_locator}</arg>
 <arg>${user_password}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20240131 15:02:36.275" endtime="20240131 15:02:36.275"/>
+<status status="NOT RUN" starttime="20240131 15:12:09.789" endtime="20240131 15:12:09.789"/>
 </kw>
 <kw name="Select From List By Value" library="SeleniumLibrary">
 <arg>${dob_days_id}</arg>
 <arg>5</arg>
 <doc>Selects options from selection list ``locator`` by ``values``.</doc>
-<status status="NOT RUN" starttime="20240131 15:02:36.275" endtime="20240131 15:02:36.275"/>
+<status status="NOT RUN" starttime="20240131 15:12:09.790" endtime="20240131 15:12:09.790"/>
 </kw>
 <kw name="Select From List By Value" library="SeleniumLibrary">
 <arg>${dob_months_id}</arg>
 <arg>5</arg>
 <doc>Selects options from selection list ``locator`` by ``values``.</doc>
-<status status="NOT RUN" starttime="20240131 15:02:36.275" endtime="20240131 15:02:36.275"/>
+<status status="NOT RUN" starttime="20240131 15:12:09.792" endtime="20240131 15:12:09.792"/>
 </kw>
 <kw name="Select From List By Value" library="SeleniumLibrary">
 <arg>${dob_years_id}</arg>
 <arg>2000</arg>
 <doc>Selects options from selection list ``locator`` by ``values``.</doc>
-<status status="NOT RUN" starttime="20240131 15:02:36.275" endtime="20240131 15:02:36.275"/>
+<status status="NOT RUN" starttime="20240131 15:12:09.792" endtime="20240131 15:12:09.792"/>
 </kw>
 <kw name="Scroll Element Into View" library="SeleniumLibrary">
 <arg>${company_textfield}</arg>
 <doc>Scrolls the element identified by ``locator`` into view.</doc>
-<status status="NOT RUN" starttime="20240131 15:02:36.275" endtime="20240131 15:02:36.275"/>
+<status status="NOT RUN" starttime="20240131 15:12:09.793" endtime="20240131 15:12:09.793"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${signup_newsletter_checkbox}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20240131 15:02:36.276" endtime="20240131 15:02:36.276"/>
+<status status="NOT RUN" starttime="20240131 15:12:09.793" endtime="20240131 15:12:09.793"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${specialoffer_checkbox}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20240131 15:02:36.276" endtime="20240131 15:02:36.276"/>
+<status status="NOT RUN" starttime="20240131 15:12:09.794" endtime="20240131 15:12:09.794"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${firstname_textfield}</arg>
 <arg>Test</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20240131 15:02:36.276" endtime="20240131 15:02:36.276"/>
+<status status="NOT RUN" starttime="20240131 15:12:09.794" endtime="20240131 15:12:09.794"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${lastname_textfield}</arg>
 <arg>Automated</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20240131 15:02:36.276" endtime="20240131 15:02:36.276"/>
+<status status="NOT RUN" starttime="20240131 15:12:09.794" endtime="20240131 15:12:09.794"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${company_textfield}</arg>
 <arg>ABC</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20240131 15:02:36.276" endtime="20240131 15:02:36.276"/>
+<status status="NOT RUN" starttime="20240131 15:12:09.794" endtime="20240131 15:12:09.794"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${address_textfield}</arg>
 <arg>adress1</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20240131 15:02:36.277" endtime="20240131 15:02:36.277"/>
+<status status="NOT RUN" starttime="20240131 15:12:09.795" endtime="20240131 15:12:09.795"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${address2_textfield}</arg>
 <arg>address2</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20240131 15:02:36.277" endtime="20240131 15:02:36.277"/>
+<status status="NOT RUN" starttime="20240131 15:12:09.795" endtime="20240131 15:12:09.795"/>
 </kw>
 <kw name="Select From List By Value" library="SeleniumLibrary">
 <arg>${country_dropdown}</arg>
 <arg>Australia</arg>
 <doc>Selects options from selection list ``locator`` by ``values``.</doc>
-<status status="NOT RUN" starttime="20240131 15:02:36.277" endtime="20240131 15:02:36.277"/>
+<status status="NOT RUN" starttime="20240131 15:12:09.795" endtime="20240131 15:12:09.795"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${state_textfield}</arg>
 <arg>state1</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20240131 15:02:36.277" endtime="20240131 15:02:36.277"/>
+<status status="NOT RUN" starttime="20240131 15:12:09.796" endtime="20240131 15:12:09.796"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${city_textfield}</arg>
 <arg>city1</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20240131 15:02:36.277" endtime="20240131 15:02:36.278"/>
+<status status="NOT RUN" starttime="20240131 15:12:09.796" endtime="20240131 15:12:09.796"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${zipcode_textfield}</arg>
 <arg>01234</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20240131 15:02:36.278" endtime="20240131 15:02:36.278"/>
+<status status="NOT RUN" starttime="20240131 15:12:09.796" endtime="20240131 15:12:09.796"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${mobilenumber_textfield}</arg>
 <arg>134567890</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20240131 15:02:36.278" endtime="20240131 15:02:36.278"/>
+<status status="NOT RUN" starttime="20240131 15:12:09.796" endtime="20240131 15:12:09.797"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${create_account_button}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20240131 15:02:36.278" endtime="20240131 15:02:36.278"/>
+<status status="NOT RUN" starttime="20240131 15:12:09.797" endtime="20240131 15:12:09.797"/>
 </kw>
 <kw name="Get Text" library="SeleniumLibrary">
 <var>${actual_text2}</var>
 <arg>${account_created_success}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20240131 15:02:36.278" endtime="20240131 15:02:36.278"/>
+<status status="NOT RUN" starttime="20240131 15:12:09.797" endtime="20240131 15:12:09.797"/>
 </kw>
 <kw name="Should Be Equal As Strings" library="BuiltIn">
 <arg>${actual_text2}</arg>
 <arg>ACCOUNT CREATED!</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="NOT RUN" starttime="20240131 15:02:36.278" endtime="20240131 15:02:36.278"/>
+<status status="NOT RUN" starttime="20240131 15:12:09.797" endtime="20240131 15:12:09.797"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${continue_button}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20240131 15:02:36.278" endtime="20240131 15:02:36.278"/>
+<status status="NOT RUN" starttime="20240131 15:12:09.798" endtime="20240131 15:12:09.798"/>
 </kw>
 <kw name="Get Text" library="SeleniumLibrary">
 <var>${actual_text3}</var>
 <arg>${loggedin_user}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20240131 15:02:36.279" endtime="20240131 15:02:36.279"/>
+<status status="NOT RUN" starttime="20240131 15:12:09.798" endtime="20240131 15:12:09.798"/>
 </kw>
 <kw name="Should Be Equal As Strings" library="BuiltIn">
 <arg>${actual_text3}</arg>
 <arg>Logged in as ${user_name}</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="NOT RUN" starttime="20240131 15:02:36.279" endtime="20240131 15:02:36.279"/>
+<status status="NOT RUN" starttime="20240131 15:12:09.798" endtime="20240131 15:12:09.798"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>5s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" starttime="20240131 15:02:36.279" endtime="20240131 15:02:36.279"/>
+<status status="NOT RUN" starttime="20240131 15:12:09.799" endtime="20240131 15:12:09.799"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${delete_account}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20240131 15:02:36.279" endtime="20240131 15:02:36.279"/>
+<status status="NOT RUN" starttime="20240131 15:12:09.799" endtime="20240131 15:12:09.799"/>
 </kw>
 <kw name="Get Text" library="SeleniumLibrary">
 <var>${actual_text4}</var>
 <arg>${delete_success}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20240131 15:02:36.279" endtime="20240131 15:02:36.279"/>
+<status status="NOT RUN" starttime="20240131 15:12:09.799" endtime="20240131 15:12:09.799"/>
 </kw>
 <kw name="Should Be Equal As Strings" library="BuiltIn">
 <arg>${actual_text4}</arg>
 <arg>ACCOUNT DELETED!</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="NOT RUN" starttime="20240131 15:02:36.280" endtime="20240131 15:02:36.280"/>
+<status status="NOT RUN" starttime="20240131 15:12:09.800" endtime="20240131 15:12:09.800"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${continue_button}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20240131 15:02:36.280" endtime="20240131 15:02:36.280"/>
+<status status="NOT RUN" starttime="20240131 15:12:09.800" endtime="20240131 15:12:09.800"/>
 </kw>
 <doc>Check the enter account information is opened and fills up all the details and save
 This testcase also delets the created user after successful login</doc>
-<status status="FAIL" starttime="20240131 15:02:36.272" endtime="20240131 15:02:36.280">No browser is open.</status>
+<status status="FAIL" starttime="20240131 15:12:09.785" endtime="20240131 15:12:09.800">No browser is open.</status>
 </test>
-<status status="FAIL" starttime="20240131 15:02:36.083" endtime="20240131 15:02:36.283"/>
+<status status="FAIL" starttime="20240131 15:12:09.509" endtime="20240131 15:12:09.802"/>
 </suite>
 <statistics>
 <total>
