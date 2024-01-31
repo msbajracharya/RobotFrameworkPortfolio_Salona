@@ -1,11 +1,21 @@
 *** Settings ***
 Library  SeleniumLibrary
-Resource       config.robot
-Resource       disableAds.robot
+Library    Collections
+Resource       ../../resources/config.robot
+Resource       ../../resources/disableAds.robot
+Resource       ../../resources/new_user_creation.robot
 
 *** Variables ***
 ${page_indicate}   xpath=//*[contains(text(),'Full-Fledged practice website for Automation Engineers')]
-${signup_login_button}  xpath=//*[@id="header"]/div/div/div/div[2]/div/ul/li[4]/a
+${first_product}    xpath=/html/body/section[2]/div/div/div[2]/div[1]/div[2]/div/div[1]/div[1]/p
+${first_product_price}     xpath=/html/body/section[2]/div/div/div[2]/div[1]/div[2]/div/div[1]/div[1]/h2
+${first_product_cart}    xpath=/html/body/section[2]/div/div/div[2]/div[1]/div[2]/div/div[1]/div[2]/div/a
+${modal_box}    xpath=//*[@id="cartModal"]/div/div
+${continue_shopping}    xpath=//*[@id="cartModal"]/div/div/div[3]/button
+${view_cart}    xpath=//*[@id="cartModal"]/div/div/div[2]/p[2]/a/u
+${proceed_to_checkout}    xpath=//*[@id="do_action"]/div[1]/div/div/a
+${checkout_modal_box}    xpath=//*[@id="checkoutModal"]/div/div
+${register_link}    xpath=//*[@id="checkoutModal"]/div/div/div[2]/p[2]/a
 ${signup_text_locator}  xpath=//*[contains(text(),'New User Signup!')]
 ${new_user_name_field_locator}  xpath=//*[@name="name"]
 ${new_user_email_field_locator}  xpath=//input[@data-qa='signup-email']
@@ -44,48 +54,44 @@ ${login_email}  xpath=//*[@name="email"]
 ${login_password}  xpath=//*[@name="password"]
 ${login_button}  xpath=//*[@id="form"]/div/div/div[1]/div/form/button
 
+${cart_page}    xpath=//*[@id="header"]/div/div/div/div[2]/div/ul/li[3]/a
 
-*** Keywords *** 
-Open Website and sign up page
-    [Documentation]     This test case is creating a new user for the website. Some of the main test cases require a new user.
+
+*** Test Cases ***
+Add products to Cart and Register after checkout
+    [Documentation]     Opens the website, add products to cart. Open the card , go to checkout and Register to complete the order
+      
     Open browser and install add_extension to block the ads
     Wait Until Page Contains Element    ${page_indicate}    timeout=10s
     Element Should Be Visible   ${page_indicate} 
-    Wait Until Page Contains Element  ${signup_login_button}
-    Click Element  ${signup_login_button} 
+    
+   
+   
+    # hover over the first product and click add to cart
+    Mouse Over    ${first_product} 
+    Click Element    ${first_product_cart}
+    Wait Until Element Is Visible    ${modal_box}
+    Click Element    ${continue_shopping}
 
-Continue from signup page
-    Element Should Be Visible  ${signup_text_locator}
-    Input Text            ${new_user_name_field_locator}    ${user_name}
-    Input Text            ${new_user_email_field_locator}   ${user_email}
-    Click Button          ${signup_button}
-    Element Should Be Visible  ${detail_info_page}  timeout=10s
-    ${actual_text}  Get Text   ${detail_info_page}
-    Should Be Equal As Strings  ${actual_text}  ENTER ACCOUNT INFORMATION
-    ${actual_text}  Get Value   ${new_user_name_field_locator}
-    Should Be Equal As Strings  ${actual_text}  ${user_name}
-    ${actual_text1}  Get Value   ${new_user_email_disabled}  
-    Should Be Equal As Strings  ${actual_text1}  ${user_email}
-    Input Text   ${passwordfield_locator}  ${user_password}
-    Select From List By Value     ${dob_days_id}   5
-    Select From List By Value     ${dob_months_id}   5
-    Select From List By Value     ${dob_years_id}   2000
-    Scroll Element Into View    ${company_textfield}  
+    #Open the cart
+    Click Element    ${view_cart}
+    
+    #Proceed to checkout button
+    Click Element    ${proceed_to_checkout}
+
+    #at for modal to popup and Register link is clicked
+    Wait Until Element Is Visible    ${checkout_modal_box}
+    Click Element    ${register_link}
+    ${result}=    Run Keyword If    True    Continue from signup page
+   
+    Click Element  ${continue_button}
+
+    #Checks if the logged in user is shown
+    ${actual_text3}  Get Text  ${loggedin_user}
+    Should Be Equal As Strings  ${actual_text3}   Logged in as ${user_name}
     Sleep  5s
-    Click Element  ${signup_newsletter_checkbox}
-    Click Element  ${specialoffer_checkbox} 
-    Input Text    ${firstname_textfield}  Test
-    Input Text  ${lastname_textfield}   Automated
-    Input Text  ${company_textfield}  ABC
-    Input Text  ${address_textfield}  adress1
-    Input Text  ${address2_textfield}  address2
-    Select From List By Value  ${country_dropdown}     Australia
-    Input Text  ${state_textfield}  state1
-    Input Text  ${city_textfield}  city1
-    Input Text  ${zipcode_textfield}  01234
-    Input Text  ${mobilenumber_textfield}  134567890
-    Click Element  ${create_account_button}
-    ${actual_text2}  Get Text  ${account_created_success}
-    Should Be Equal As Strings  ${actual_text2}   ACCOUNT CREATED!
-    
-    
+
+
+    Click Element    ${cart_page}
+    Click Element    ${proceed_to_checkout}
+

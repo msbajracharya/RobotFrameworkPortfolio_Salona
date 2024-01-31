@@ -17,6 +17,8 @@ User login with email and password
     Wait Until Page Contains Element    ${page_indicate}    timeout=10s
     Element Should Be Visible   ${page_indicate} 
     Wait Until Page Contains Element  ${signup_login_button}
+
+Continue from signin page 
     Click Element  ${signup_login_button} 
     ${actual_text1}  Get Text  ${login_page}
     Should Be Equal As Strings  ${actual_text1}   Login to your account
