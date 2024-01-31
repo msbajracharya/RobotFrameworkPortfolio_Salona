@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1.1 (Python 3.12.0 on linux)" generated="20240131 15:52:37.298" rpa="false" schemaversion="4">
+<robot generator="Robot 6.1.1 (Python 3.12.0 on linux)" generated="20240131 16:13:58.112" rpa="false" schemaversion="4">
 <suite id="s1" name="Demo" source="/workspaces/RobotFrameworkPortfolio_Salona/tests/test_suites_01/demo.robot">
 <test id="s1-t1" name="Open Chrome Browser With Path To ChromeDriver" line="9">
 <kw name="Open Browser" library="SeleniumLibrary">
@@ -7,20 +7,20 @@
 <arg>Chrome</arg>
 <arg>executable_path=${CHROMEDRIVER_PATH}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20240131 15:52:37.480" level="INFO">Opening browser 'Chrome' to base url 'https://www.google.com'.</msg>
-<msg timestamp="20240131 15:52:37.483" level="INFO">Cannot capture screenshot because no browser is open.</msg>
-<msg timestamp="20240131 15:52:37.483" level="FAIL">WebDriverException: Message: 'chromedriver' executable may have wrong permissions.
+<msg timestamp="20240131 16:13:58.317" level="INFO">Opening browser 'Chrome' to base url 'https://www.google.com'.</msg>
+<msg timestamp="20240131 16:13:58.321" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<msg timestamp="20240131 16:13:58.321" level="FAIL">WebDriverException: Message: 'chromedriver' executable may have wrong permissions.
 </msg>
-<status status="FAIL" starttime="20240131 15:52:37.479" endtime="20240131 15:52:37.505"/>
+<status status="FAIL" starttime="20240131 16:13:58.316" endtime="20240131 16:13:58.325"/>
 </kw>
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="NOT RUN" starttime="20240131 15:52:37.505" endtime="20240131 15:52:37.505"/>
+<status status="NOT RUN" starttime="20240131 16:13:58.326" endtime="20240131 16:13:58.326"/>
 </kw>
-<status status="FAIL" starttime="20240131 15:52:37.478" endtime="20240131 15:52:37.506">WebDriverException: Message: 'chromedriver' executable may have wrong permissions.
+<status status="FAIL" starttime="20240131 16:13:58.316" endtime="20240131 16:13:58.326">WebDriverException: Message: 'chromedriver' executable may have wrong permissions.
 </status>
 </test>
-<status status="FAIL" starttime="20240131 15:52:37.299" endtime="20240131 15:52:37.507"/>
+<status status="FAIL" starttime="20240131 16:13:58.113" endtime="20240131 16:13:58.328"/>
 </suite>
 <statistics>
 <total>
