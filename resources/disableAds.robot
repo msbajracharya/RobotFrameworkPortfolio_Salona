@@ -9,10 +9,6 @@ Open browser and install add_extension to block the ads
     ...                    like in any normal websites. The ads blocks the flow of automation. So to avoid this, a browser extension
     ...                    is used which blocks the ads in the website. crx file is used here that installs the adblock extension
     ...                    on every browser opened.
-    ${chrome_options}=    Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys, selenium.webdriver
-    Call Method    ${chrome_options}    add_argument    --disable-gpu
-    Call Method    ${chrome_options}    add_argument    --no-sandbox
-    Create Webdriver    Chrome    chrome_options=${chrome_options}
 
 
     ${ChromeOptions} =     Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys, selenium.webdriver
