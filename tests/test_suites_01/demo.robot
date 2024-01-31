@@ -1,11 +1,8 @@
 *** Settings ***
-Library    SeleniumLibrary
-
-*** Variables ***
-${URL}    https://www.google.com
-${CHROMEDRIVER_PATH}    chromedriver
+Library           SeleniumLibrary
 
 *** Test Cases ***
-Open Chrome Browser With Path To ChromeDriver
-    Open Browser    ${URL}    Chrome    executable_path=${CHROMEDRIVER_PATH}
+Open Browser Example
+    Open Browser    https://www.example.com    Chrome    executable_path=./chromedriver
+    # Add your test steps here
     Close Browser
