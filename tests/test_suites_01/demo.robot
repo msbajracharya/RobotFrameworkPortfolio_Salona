@@ -2,7 +2,7 @@
 Library           SeleniumLibrary
 
 *** Test Cases ***
-Open Browser Example
-    Open Browser    https://www.example.com    Chrome    executable_path=./chromedriver
+Open Headless Browser Example
+    Open Browser    https://www.example.com    Chrome    executable_path=./chromedriver    options=add_argument("--headless")
     # Add your test steps here
     Close Browser
