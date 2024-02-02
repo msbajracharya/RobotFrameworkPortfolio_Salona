@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.0.1 (Python 3.11.1 on win32)" generated="20240118 15:32:31.494" rpa="false" schemaversion="3">
+<robot generator="Robot 6.0.1 (Python 3.11.1 on win32)" generated="20240131 16:40:58.300" rpa="false" schemaversion="3">
 <suite id="s1" name="TestCase12 add product" source="C:\Tests\RobotFrameworkPorfolio\tests\test_suites_01\TestCase12_add_product.robot">
-<test id="s1-t1" name="Add products to Cart and verify the cart" line="30">
+<test id="s1-t1" name="Add products to Cart and verify the cart" line="26">
 <kw name="Open browser and install add_extension to block the ads" library="disableAds">
 <doc>Since we are automating a website which is published in the internet, and the website contains ads
 like in any normal websites. The ads blocks the flow of automation. So to avoid this, a browser extension
@@ -12,205 +12,242 @@ on every browser opened.</doc>
 <arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
 <arg>sys, selenium.webdriver</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20240118 15:32:31.887" level="INFO">${ChromeOptions} = &lt;selenium.webdriver.chrome.options.Options object at 0x000001827358B090&gt;</msg>
-<status status="PASS" starttime="20240118 15:32:31.887" endtime="20240118 15:32:31.887"/>
-</kw>
-<kw name="Call Method" library="BuiltIn">
-<arg>${ChromeOptions}</arg>
-<arg>add_extension</arg>
-<arg>${adblocker_crx_path}</arg>
-<doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" starttime="20240118 15:32:31.887" endtime="20240118 15:32:31.888"/>
+<msg timestamp="20240131 16:40:58.709" level="INFO">${ChromeOptions} = &lt;selenium.webdriver.chrome.options.Options object at 0x000001D68E8BB2D0&gt;</msg>
+<status status="PASS" starttime="20240131 16:40:58.708" endtime="20240131 16:40:58.709"/>
 </kw>
 <kw name="Evaluate" library="BuiltIn">
 <var>${dc}</var>
 <arg>sys.modules['selenium.webdriver'].DesiredCapabilities.CHROME</arg>
 <arg>sys, selenium.webdriver</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20240118 15:32:31.888" level="INFO">${dc} = {'browserName': 'chrome'}</msg>
-<status status="PASS" starttime="20240118 15:32:31.888" endtime="20240118 15:32:31.888"/>
+<msg timestamp="20240131 16:40:58.709" level="INFO">${dc} = {'browserName': 'chrome'}</msg>
+<status status="PASS" starttime="20240131 16:40:58.709" endtime="20240131 16:40:58.709"/>
 </kw>
 <kw name="Call Method" library="BuiltIn">
 <var>${Options}</var>
 <arg>${ChromeOptions}</arg>
 <arg>to_capabilities</arg>
 <doc>Calls the named method of the given object with the provided arguments.</doc>
-<msg timestamp="20240118 15:32:31.959" level="INFO">${Options} = {'browserName': 'chrome', 'pageLoadStrategy': 'normal', 'goog:chromeOptions': {'extensions': ['Q3IyNAMAAAAYBAAAEqwECqYCMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAj/u/XDdjlDyw7gHEtaaasZ9GdG8WOKAyJzXd8...</msg>
-<status status="PASS" starttime="20240118 15:32:31.889" endtime="20240118 15:32:31.959"/>
+<msg timestamp="20240131 16:40:58.710" level="INFO">${Options} = {'browserName': 'chrome', 'pageLoadStrategy': 'normal', 'goog:chromeOptions': {'extensions': [], 'args': []}}</msg>
+<status status="PASS" starttime="20240131 16:40:58.709" endtime="20240131 16:40:58.710"/>
 </kw>
 <kw name="Create Webdriver" library="SeleniumLibrary">
 <arg>Chrome</arg>
 <arg>chrome_options=${chrome_options}</arg>
 <arg>desired_capabilities=${dc}</arg>
 <doc>Creates an instance of Selenium WebDriver.</doc>
-<msg timestamp="20240118 15:32:31.960" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
-<status status="PASS" starttime="20240118 15:32:31.959" endtime="20240118 15:32:35.684"/>
+<msg timestamp="20240131 16:40:58.710" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20240131 16:40:58.710" endtime="20240131 16:41:00.586"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>10s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20240118 15:32:45.684" level="INFO">Slept 10 seconds</msg>
-<status status="PASS" starttime="20240118 15:32:35.684" endtime="20240118 15:32:45.684"/>
+<msg timestamp="20240131 16:41:10.586" level="INFO">Slept 10 seconds</msg>
+<status status="PASS" starttime="20240131 16:41:00.586" endtime="20240131 16:41:10.586"/>
 </kw>
 <kw name="Go To" library="SeleniumLibrary">
 <arg>${BASE_URL}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20240118 15:32:45.684" level="INFO">Opening url 'http://automationexercise.com'</msg>
-<status status="PASS" starttime="20240118 15:32:45.684" endtime="20240118 15:33:00.381"/>
+<msg timestamp="20240131 16:41:10.586" level="INFO">Opening url 'http://automationexercise.com'</msg>
+<status status="PASS" starttime="20240131 16:41:10.586" endtime="20240131 16:41:13.657"/>
 </kw>
-<status status="PASS" starttime="20240118 15:32:31.886" endtime="20240118 15:33:00.381"/>
+<status status="PASS" starttime="20240131 16:40:58.708" endtime="20240131 16:41:13.657"/>
 </kw>
 <kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
 <arg>${page_indicate}</arg>
 <arg>timeout=10s</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20240118 15:33:00.382" endtime="20240118 15:33:00.405"/>
+<status status="PASS" starttime="20240131 16:41:13.658" endtime="20240131 16:41:13.683"/>
 </kw>
 <kw name="Element Should Be Visible" library="SeleniumLibrary">
 <arg>${page_indicate}</arg>
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<msg timestamp="20240118 15:33:00.437" level="INFO">Element 'xpath=//*[contains(text(),'Full-Fledged practice website for Automation Engineers')]' is displayed.</msg>
-<status status="PASS" starttime="20240118 15:33:00.406" endtime="20240118 15:33:00.437"/>
+<msg timestamp="20240131 16:41:13.722" level="INFO">Element 'xpath=//*[contains(text(),'Full-Fledged practice website for Automation Engineers')]' is displayed.</msg>
+<status status="PASS" starttime="20240131 16:41:13.684" endtime="20240131 16:41:13.722"/>
 </kw>
 <kw name="Get Text" library="SeleniumLibrary">
 <var>${first_selected_product_name}</var>
 <arg>${first_product}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20240118 15:33:00.474" level="INFO">${first_selected_product_name} = Blue Top</msg>
-<status status="PASS" starttime="20240118 15:33:00.438" endtime="20240118 15:33:00.474"/>
+<msg timestamp="20240131 16:41:13.770" level="INFO">${first_selected_product_name} = Blue Top</msg>
+<status status="PASS" starttime="20240131 16:41:13.723" endtime="20240131 16:41:13.770"/>
 </kw>
 <kw name="Get Text" library="SeleniumLibrary">
 <var>${second_selected_product_name}</var>
 <arg>${second_product}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20240118 15:33:00.502" level="INFO">${second_selected_product_name} = Men Tshirt</msg>
-<status status="PASS" starttime="20240118 15:33:00.475" endtime="20240118 15:33:00.502"/>
+<msg timestamp="20240131 16:41:13.811" level="INFO">${second_selected_product_name} = Men Tshirt</msg>
+<status status="PASS" starttime="20240131 16:41:13.771" endtime="20240131 16:41:13.811"/>
 </kw>
 <kw name="Get Text" library="SeleniumLibrary">
 <var>${first_selected_product_price}</var>
 <arg>${first_product_price}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20240118 15:33:00.530" level="INFO">${first_selected_product_price} = Rs. 500</msg>
-<status status="PASS" starttime="20240118 15:33:00.502" endtime="20240118 15:33:00.530"/>
+<msg timestamp="20240131 16:41:13.862" level="INFO">${first_selected_product_price} = Rs. 500</msg>
+<status status="PASS" starttime="20240131 16:41:13.812" endtime="20240131 16:41:13.862"/>
 </kw>
 <kw name="Get Text" library="SeleniumLibrary">
 <var>${second_selected_product_price}</var>
 <arg>${second_product_price}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20240118 15:33:00.559" level="INFO">${second_selected_product_price} = Rs. 400</msg>
-<status status="PASS" starttime="20240118 15:33:00.531" endtime="20240118 15:33:00.559"/>
+<msg timestamp="20240131 16:41:13.901" level="INFO">${second_selected_product_price} = Rs. 400</msg>
+<status status="PASS" starttime="20240131 16:41:13.863" endtime="20240131 16:41:13.901"/>
 </kw>
 <kw name="Mouse Over" library="SeleniumLibrary">
 <arg>${first_product}</arg>
 <doc>Simulates hovering the mouse over the element ``locator``.</doc>
-<msg timestamp="20240118 15:33:00.560" level="INFO">Simulating Mouse Over on element 'xpath=/html/body/section[2]/div/div/div[2]/div[1]/div[2]/div/div[1]/div[1]/p'.</msg>
-<status status="PASS" starttime="20240118 15:33:00.560" endtime="20240118 15:33:00.865"/>
+<msg timestamp="20240131 16:41:13.903" level="INFO">Simulating Mouse Over on element 'xpath=/html/body/section[2]/div/div/div[2]/div[1]/div[2]/div/div[1]/div[1]/p'.</msg>
+<status status="PASS" starttime="20240131 16:41:13.902" endtime="20240131 16:41:14.227"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${first_product_cart}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240118 15:33:00.868" level="INFO">Clicking element 'xpath=/html/body/section[2]/div/div/div[2]/div[1]/div[2]/div/div[1]/div[2]/div/a'.</msg>
-<status status="PASS" starttime="20240118 15:33:00.867" endtime="20240118 15:33:00.973"/>
+<msg timestamp="20240131 16:41:14.229" level="INFO">Clicking element 'xpath=/html/body/section[2]/div/div/div[2]/div[1]/div[2]/div/div[1]/div[2]/div/a'.</msg>
+<msg timestamp="20240131 16:41:14.613" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20240131 16:41:14.613" level="FAIL">ElementNotInteractableException: Message: element not interactable
+  (Session info: chrome=120.0.6099.227)
+Stacktrace:
+	GetHandleVerifier [0x00007FF74C252142+3514994]
+	(No symbol) [0x00007FF74BE70CE2]
+	(No symbol) [0x00007FF74BD174C3]
+	(No symbol) [0x00007FF74BD62D29]
+	(No symbol) [0x00007FF74BD56A0F]
+	(No symbol) [0x00007FF74BD85FEA]
+	(No symbol) [0x00007FF74BD563B6]
+	(No symbol) [0x00007FF74BD86490]
+	(No symbol) [0x00007FF74BDA28F6]
+	(No symbol) [0x00007FF74BD85D93]
+	(No symbol) [0x00007FF74BD54BDC]
+	(No symbol) [0x00007FF74BD55C64]
+	GetHandleVerifier [0x00007FF74C27E16B+3695259]
+	GetHandleVerifier [0x00007FF74C2D6737+4057191]
+	GetHandleVerifier [0x00007FF74C2CE4E3+4023827]
+	GetHandleVerifier [0x00007FF74BFA04F9+689705]
+	(No symbol) [0x00007FF74BE7C048]
+	(No symbol) [0x00007FF74BE78044]
+	(No symbol) [0x00007FF74BE781C9]
+	(No symbol) [0x00007FF74BE688C4]
+	BaseThreadInitThunk [0x00007FFD67307344+20]
+	RtlUserThreadStart [0x00007FFD674426B1+33]
+</msg>
+<status status="FAIL" starttime="20240131 16:41:14.228" endtime="20240131 16:41:14.620"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${modal_box}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240118 15:33:00.973" endtime="20240118 15:33:01.722"/>
+<status status="NOT RUN" starttime="20240131 16:41:14.621" endtime="20240131 16:41:14.621"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${continue_shopping}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240118 15:33:01.724" level="INFO">Clicking element 'xpath=//*[@id="cartModal"]/div/div/div[3]/button'.</msg>
-<status status="PASS" starttime="20240118 15:33:01.723" endtime="20240118 15:33:01.797"/>
+<status status="NOT RUN" starttime="20240131 16:41:14.622" endtime="20240131 16:41:14.622"/>
 </kw>
 <kw name="Mouse Over" library="SeleniumLibrary">
 <arg>${second_product}</arg>
 <doc>Simulates hovering the mouse over the element ``locator``.</doc>
-<msg timestamp="20240118 15:33:01.799" level="INFO">Simulating Mouse Over on element 'xpath=/html/body/section[2]/div/div/div[2]/div[1]/div[3]/div/div[1]/div[1]/p'.</msg>
-<status status="PASS" starttime="20240118 15:33:01.798" endtime="20240118 15:33:02.199"/>
+<status status="NOT RUN" starttime="20240131 16:41:14.623" endtime="20240131 16:41:14.623"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${second_product_cart}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240118 15:33:02.201" level="INFO">Clicking element 'xpath=/html/body/section[2]/div/div/div[2]/div[1]/div[3]/div/div[1]/div[2]/div/a'.</msg>
-<status status="PASS" starttime="20240118 15:33:02.200" endtime="20240118 15:33:02.282"/>
+<status status="NOT RUN" starttime="20240131 16:41:14.623" endtime="20240131 16:41:14.623"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${modal_box}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20240118 15:33:02.283" endtime="20240118 15:33:02.556"/>
+<status status="NOT RUN" starttime="20240131 16:41:14.624" endtime="20240131 16:41:14.624"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${view_cart}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240118 15:33:02.558" level="INFO">Clicking element 'xpath=//*[@id="cartModal"]/div/div/div[2]/p[2]/a/u'.</msg>
-<status status="PASS" starttime="20240118 15:33:02.557" endtime="20240118 15:33:03.781"/>
+<status status="NOT RUN" starttime="20240131 16:41:14.625" endtime="20240131 16:41:14.625"/>
 </kw>
 <kw name="Get Text" library="SeleniumLibrary">
 <var>${first_productname_in_cart}</var>
 <arg>${first_product_in_cart}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20240118 15:33:03.823" level="INFO">${first_productname_in_cart} = Blue Top</msg>
-<status status="PASS" starttime="20240118 15:33:03.783" endtime="20240118 15:33:03.823"/>
+<status status="NOT RUN" starttime="20240131 16:41:14.625" endtime="20240131 16:41:14.625"/>
 </kw>
 <kw name="Get Text" library="SeleniumLibrary">
 <var>${second_productname_in_cart}</var>
 <arg>${second_product_in_cart}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20240118 15:33:03.854" level="INFO">${second_productname_in_cart} = Men Tshirt</msg>
-<status status="PASS" starttime="20240118 15:33:03.824" endtime="20240118 15:33:03.854"/>
+<status status="NOT RUN" starttime="20240131 16:41:14.626" endtime="20240131 16:41:14.626"/>
 </kw>
 <kw name="Get Text" library="SeleniumLibrary">
 <var>${first_product_amount_in_cart}</var>
 <arg>${first_product_price_in_cart}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20240118 15:33:03.884" level="INFO">${first_product_amount_in_cart} = Rs. 500</msg>
-<status status="PASS" starttime="20240118 15:33:03.855" endtime="20240118 15:33:03.884"/>
+<status status="NOT RUN" starttime="20240131 16:41:14.627" endtime="20240131 16:41:14.627"/>
 </kw>
 <kw name="Get Text" library="SeleniumLibrary">
 <var>${second_product_amount_in_cart}</var>
 <arg>${second_product_price_in_cart}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20240118 15:33:03.916" level="INFO">${second_product_amount_in_cart} = Rs. 400</msg>
-<status status="PASS" starttime="20240118 15:33:03.885" endtime="20240118 15:33:03.916"/>
+<status status="NOT RUN" starttime="20240131 16:41:14.627" endtime="20240131 16:41:14.627"/>
 </kw>
 <kw name="Should Be Equal As Strings" library="BuiltIn">
 <arg>${first_selected_product_name}</arg>
 <arg>${first_productname_in_cart}</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="PASS" starttime="20240118 15:33:03.917" endtime="20240118 15:33:03.917"/>
+<status status="NOT RUN" starttime="20240131 16:41:14.628" endtime="20240131 16:41:14.628"/>
 </kw>
 <kw name="Should Be Equal As Strings" library="BuiltIn">
 <arg>${second_selected_product_name}</arg>
 <arg>${second_productname_in_cart}</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="PASS" starttime="20240118 15:33:03.917" endtime="20240118 15:33:03.918"/>
+<status status="NOT RUN" starttime="20240131 16:41:14.629" endtime="20240131 16:41:14.629"/>
 </kw>
 <kw name="Should Be Equal As Strings" library="BuiltIn">
 <arg>${first_selected_product_price}</arg>
 <arg>${first_product_amount_in_cart}</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="PASS" starttime="20240118 15:33:03.918" endtime="20240118 15:33:03.919"/>
+<status status="NOT RUN" starttime="20240131 16:41:14.629" endtime="20240131 16:41:14.629"/>
 </kw>
 <kw name="Should Be Equal As Strings" library="BuiltIn">
 <arg>${second_selected_product_price}</arg>
 <arg>${second_product_amount_in_cart}</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="PASS" starttime="20240118 15:33:03.919" endtime="20240118 15:33:03.919"/>
+<status status="NOT RUN" starttime="20240131 16:41:14.630" endtime="20240131 16:41:14.630"/>
 </kw>
 <doc>Opens the website, add products to cart. Open the card and check the products are added</doc>
-<status status="PASS" starttime="20240118 15:32:31.885" endtime="20240118 15:33:03.920"/>
+<status status="FAIL" starttime="20240131 16:40:58.707" endtime="20240131 16:41:14.630">ElementNotInteractableException: Message: element not interactable
+  (Session info: chrome=120.0.6099.227)
+Stacktrace:
+	GetHandleVerifier [0x00007FF74C252142+3514994]
+	(No symbol) [0x00007FF74BE70CE2]
+	(No symbol) [0x00007FF74BD174C3]
+	(No symbol) [0x00007FF74BD62D29]
+	(No symbol) [0x00007FF74BD56A0F]
+	(No symbol) [0x00007FF74BD85FEA]
+	(No symbol) [0x00007FF74BD563B6]
+	(No symbol) [0x00007FF74BD86490]
+	(No symbol) [0x00007FF74BDA28F6]
+	(No symbol) [0x00007FF74BD85D93]
+	(No symbol) [0x00007FF74BD54BDC]
+	(No symbol) [0x00007FF74BD55C64]
+	GetHandleVerifier [0x00007FF74C27E16B+3695259]
+	GetHandleVerifier [0x00007FF74C2D6737+4057191]
+	GetHandleVerifier [0x00007FF74C2CE4E3+4023827]
+	GetHandleVerifier [0x00007FF74BFA04F9+689705]
+	(No symbol) [0x00007FF74BE7C048]
+	(No symbol) [0x00007FF74BE78044]
+	(No symbol) [0x00007FF74BE781C9]
+	(No symbol) [0x00007FF74BE688C4]
+	BaseThreadInitThunk [0x00007FFD67307344+20]
+	RtlUserThreadStart [0x00007FFD674426B1+33]
+</status>
 </test>
-<status status="PASS" starttime="20240118 15:32:31.497" endtime="20240118 15:33:03.922"/>
+<status status="FAIL" starttime="20240131 16:40:58.304" endtime="20240131 16:41:14.638"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="TestCase12 add product">TestCase12 add product</stat>
+<stat pass="0" fail="1" skip="0" id="s1" name="TestCase12 add product">TestCase12 add product</stat>
 </suite>
 </statistics>
 <errors>

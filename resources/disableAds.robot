@@ -10,7 +10,7 @@ Open browser and install add_extension to block the ads
     ...                    is used which blocks the ads in the website. crx file is used here that installs the adblock extension
     ...                    on every browser opened.
     ${ChromeOptions} =     Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys, selenium.webdriver
-    Call Method    ${ChromeOptions}    add_extension    ${adblocker_crx_path}
+    #Call Method    ${ChromeOptions}    add_extension    ${adblocker_crx_path}
     ${dc}   Evaluate    sys.modules['selenium.webdriver'].DesiredCapabilities.CHROME  sys, selenium.webdriver
     ${Options}=     Call Method         ${ChromeOptions}    to_capabilities      
     Create Webdriver    Chrome    chrome_options=${chrome_options}          desired_capabilities=${dc}  
