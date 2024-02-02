@@ -1,0 +1,12 @@
+.vscode
+resources/config.robot
+results/log.html
+results/report.html
+results/output.html
+AdBlock.crx
+chromedriver.exe
+fileUpload.pdf
+geckodriver.exe
+log.html
+output.html
+report.html
