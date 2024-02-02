@@ -44,12 +44,12 @@ Open Website and sign up page
     [Documentation]     Opens the website, checks if the page was successfully opened and go to Login/signup page
     Open browser and install add_extension to block the ads
     Wait Until Page Contains Element    ${page_indicate}    timeout=10s
-    Element Should Be Visible   ${page_indicate} 
+    Element Should Be Visible   ${page_indicate}
     Wait Until Page Contains Element  ${signup_login_button}
-    Click Element  ${signup_login_button} 
-    
+    Click Element  ${signup_login_button}
 
-    
+
+
 Signup for new user
     [Documentation]     Check if the signup page is opened, and fill up the username and email in the signup form
     Element Should Be Visible  ${signup_text_locator}
@@ -64,12 +64,12 @@ Signup for new user
 User info for new user
     [Documentation]     Check the enter account information is opened and fills up all the details and save
     ...                This testcase also delets the created user after successful login
-    ...    
+    ...
 
     #Validates if the username and email given when signing up is automatically populated in that specific field
     ${actual_text}  Get Value   ${new_user_name_field_locator}
     Should Be Equal As Strings  ${actual_text}  ${user_name}
-    ${actual_text1}  Get Value   ${new_user_email_disabled}  
+    ${actual_text1}  Get Value   ${new_user_email_disabled}
     Should Be Equal As Strings  ${actual_text1}  ${user_email}
 
     #Fill up other remaining fields
@@ -77,9 +77,9 @@ User info for new user
     Select From List By Value     ${dob_days_id}   5
     Select From List By Value     ${dob_months_id}   5
     Select From List By Value     ${dob_years_id}   2000
-    Scroll Element Into View    ${company_textfield}  
+    Scroll Element Into View    ${company_textfield}
     Click Element  ${signup_newsletter_checkbox}
-    Click Element  ${specialoffer_checkbox} 
+    Click Element  ${specialoffer_checkbox}
     Input Text    ${firstname_textfield}  Test
     Input Text  ${lastname_textfield}   Automated
     Input Text  ${company_textfield}  ABC
@@ -107,4 +107,3 @@ User info for new user
     ${actual_text4}  Get Text  ${delete_success}
     Should Be Equal As Strings  ${actual_text4}   ACCOUNT DELETED!
     Click Element  ${continue_button}
-    

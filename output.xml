@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <robot generator="Robot 6.0.1 (Python 3.11.1 on win32)" generated="20240131 16:40:58.300" rpa="false" schemaversion="3">
 <suite id="s1" name="TestCase12 add product" source="C:\Tests\RobotFrameworkPorfolio\tests\test_suites_01\TestCase12_add_product.robot">
 <test id="s1-t1" name="Add products to Cart and verify the cart" line="26">
@@ -239,6 +240,28 @@ Stacktrace:
 </status>
 </test>
 <status status="FAIL" starttime="20240131 16:40:58.304" endtime="20240131 16:41:14.638"/>
+=======
+<robot generator="Robot 6.1.1 (Python 3.12.0 on linux)" generated="20240131 16:44:19.495" rpa="false" schemaversion="4">
+<suite id="s1" name="Demo" source="/workspaces/RobotFrameworkPortfolio_Salona/tests/test_suites_01/demo.robot">
+<test id="s1-t1" name="Open Browser Example" line="5">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>https://www.example.com</arg>
+<arg>Chrome</arg>
+<arg>executable_path=./chromedriver</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20240131 16:44:19.669" level="INFO">Opening browser 'Chrome' to base url 'https://www.example.com'.</msg>
+<msg timestamp="20240131 16:44:19.674" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<msg timestamp="20240131 16:44:19.674" level="FAIL">OSError: [Errno 8] Exec format error: './chromedriver'</msg>
+<status status="FAIL" starttime="20240131 16:44:19.668" endtime="20240131 16:44:19.677"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="NOT RUN" starttime="20240131 16:44:19.678" endtime="20240131 16:44:19.678"/>
+</kw>
+<status status="FAIL" starttime="20240131 16:44:19.667" endtime="20240131 16:44:19.678">OSError: [Errno 8] Exec format error: './chromedriver'</status>
+</test>
+<status status="FAIL" starttime="20240131 16:44:19.496" endtime="20240131 16:44:19.679"/>
+>>>>>>> af6a2fe3060b1eeb02dc7a2fd1a3681a572fd15b
 </suite>
 <statistics>
 <total>
@@ -247,7 +270,11 @@ Stacktrace:
 <tag>
 </tag>
 <suite>
+<<<<<<< HEAD
 <stat pass="0" fail="1" skip="0" id="s1" name="TestCase12 add product">TestCase12 add product</stat>
+=======
+<stat pass="0" fail="1" skip="0" id="s1" name="Demo">Demo</stat>
+>>>>>>> af6a2fe3060b1eeb02dc7a2fd1a3681a572fd15b
 </suite>
 </statistics>
 <errors>
