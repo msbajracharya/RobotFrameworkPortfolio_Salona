@@ -25,14 +25,17 @@ ${place_order}    xpath=//*[@id="cart_items"]/div/div[7]/a
 
 
 *** Test Cases ***
-Add products to Cart and Register after checkout
-    [Documentation]     Opens the website, add products to cart. Open the card , go to checkout and Register to complete the order
+Register new user and add product to chart for checkout
+    [Documentation]     Opens the website, register a new user. Add products to cart and checkout
       
     Open browser and install add_extension to block the ads
     Wait Until Page Contains Element    ${page_indicate}    timeout=10s
     Element Should Be Visible   ${page_indicate} 
-    
-   
+
+    #Resuing the steps to create a new user from Resource folder
+    Continue from signup page
+    ${actual_text3}  Get Text  ${loggedin_user}
+    Should Be Equal As Strings  ${actual_text3}   Logged in as ${user_name}
    
     # hover over the first product and click add to cart
     Mouse Over    ${first_product} 
@@ -45,14 +48,13 @@ Add products to Cart and Register after checkout
     
     #Proceed to checkout button
     Click Element    ${proceed_to_checkout}
+    
+    #verify if the address ad details are matching the once added during new register
+    Verify the delivery address is matching the address given while registering
 
-    #at for modal to popup and Register link is clicked
-    Wait Until Element Is Visible    ${checkout_modal_box}
-    Click Element    ${register_link}
-    ${result}=    Run Keyword If    True    Continue from signup page
+    Input Text    ${description_textarea}    This is automated test
+    Click Element    ${place_order}
    
-    Click Element  ${continue_button}
-
     #Checks if the logged in user is shown
     ${actual_text3}  Get Text  ${loggedin_user}
     Should Be Equal As Strings  ${actual_text3}   Logged in as ${user_name}
@@ -61,13 +63,6 @@ Add products to Cart and Register after checkout
 
     Click Element    ${cart_page}
     Click Element    ${proceed_to_checkout}
-    
-    #verify if the address ad details are matching the once added during new register
-    Verify the delivery address is matching the address given while registering
-    
-    Input Text    ${description_textarea}    This is automated test
-    Click Element    ${place_order}
 
     Card details form
     Delete account after logging in
-

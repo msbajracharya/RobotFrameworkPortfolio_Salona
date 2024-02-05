@@ -1,5 +1,6 @@
 *** Settings ***
 Resource       ../../resources/new_user_creation.robot
+Resource       ../../resources/delete_account.robot
 
 
 *** Variables ***
@@ -28,8 +29,5 @@ User login with email and password
     ${actual_text3}  Get Text  ${loggedin_user}
     Should Be Equal As Strings  ${actual_text3}   Logged in as ${user_name}
     Sleep  5s
-    Click Element  ${delete_account}
-    ${actual_text4}  Get Text  ${delete_success}
-    Should Be Equal As Strings  ${actual_text4}   ACCOUNT DELETED!
-    Click Element  ${continue_button}
+    Delete account after logging in
     

@@ -11,9 +11,6 @@ ${new_user_name_field_locator}  xpath=//*[@name="name"]
 ${new_user_email_field_locator}  xpath=//input[@data-qa='signup-email']
 ${signup_button}  xpath=//*[@data-qa="signup-button"]
 ${detail_info_page}  xpath=//*[@id="form"]/div/div/div/div/h2/b
-${user_name}   TestName
-${user_email}  test@tmail.coo
-${user_password}  password
 ${new_user_email_disabled}  xpath=//*[@id="email"]
 ${passwordfield_locator}   xpath=//*[@id="password"]
 ${dob_days_id}   xpath=//*[@id="days"]
@@ -44,6 +41,20 @@ ${login_email}  xpath=//*[@name="email"]
 ${login_password}  xpath=//*[@name="password"]
 ${login_button}  xpath=//*[@id="form"]/div/div/div[1]/div/form/button
 
+#Field values
+${user_name}   TestName
+${user_email}  test@tmail.coo
+${user_password}  password
+${first_name}    Test
+${last_name}    Automated
+${company_name}    ABC
+${address1_name}    adress1
+${address2_name}    adress2
+${country_name}    Australia
+${state}    state1
+${city}    city1
+${zipcode}    01234
+${mobile_number}    134567890
 
 *** Keywords *** 
 Open Website and sign up page
@@ -52,9 +63,10 @@ Open Website and sign up page
     Wait Until Page Contains Element    ${page_indicate}    timeout=10s
     Element Should Be Visible   ${page_indicate} 
     Wait Until Page Contains Element  ${signup_login_button}
-    Click Element  ${signup_login_button} 
+    
 
 Continue from signup page
+    Click Element  ${signup_login_button} 
     Element Should Be Visible  ${signup_text_locator}
     Input Text            ${new_user_name_field_locator}    ${user_name}
     Input Text            ${new_user_email_field_locator}   ${user_email}
@@ -74,16 +86,16 @@ Continue from signup page
     Sleep  5s
     Click Element  ${signup_newsletter_checkbox}
     Click Element  ${specialoffer_checkbox} 
-    Input Text    ${firstname_textfield}  Test
-    Input Text  ${lastname_textfield}   Automated
-    Input Text  ${company_textfield}  ABC
-    Input Text  ${address_textfield}  adress1
-    Input Text  ${address2_textfield}  address2
-    Select From List By Value  ${country_dropdown}     Australia
-    Input Text  ${state_textfield}  state1
-    Input Text  ${city_textfield}  city1
-    Input Text  ${zipcode_textfield}  01234
-    Input Text  ${mobilenumber_textfield}  134567890
+    Input Text    ${firstname_textfield}  ${first_name}
+    Input Text  ${lastname_textfield}   ${last_name}
+    Input Text  ${company_textfield}  ${company_name}
+    Input Text  ${address_textfield}  ${address1_name}
+    Input Text  ${address2_textfield}  ${address2_name}
+    Select From List By Value  ${country_dropdown}     ${country_name} 
+    Input Text  ${state_textfield}  ${state}
+    Input Text  ${city_textfield}  ${city}
+    Input Text  ${zipcode_textfield}  ${zipcode}
+    Input Text  ${mobilenumber_textfield}  ${mobile_number}
     Click Element  ${create_account_button}
     ${actual_text2}  Get Text  ${account_created_success}
     Should Be Equal As Strings  ${actual_text2}   ACCOUNT CREATED!

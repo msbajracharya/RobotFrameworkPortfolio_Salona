@@ -2,6 +2,7 @@
 Library  SeleniumLibrary
 Resource       ../../resources/config.robot
 Resource       ../../resources/disableAds.robot
+Resource       ../../resources/delete_account.robot
 
 *** Variables ***
 ${page_indicate}   xpath=//*[contains(text(),'Full-Fledged practice website for Automation Engineers')]
@@ -34,9 +35,7 @@ ${mobilenumber_textfield}    xpath=//*[@id="mobile_number"]
 ${create_account_button}  xpath=//*[@data-qa="create-account"]
 ${account_created_success}  xpath=//*[@id="form"]/div/div/div/h2/b
 ${continue_button}  xpath=//*[@data-qa="continue-button"]
-${loggedin_user}  xpath=//*[@id="header"]/div/div/div/div[2]/div/ul/li[10]/a
-${delete_account}  xpath=//*[@id="header"]/div/div/div/div[2]/div/ul/li[5]/a
-${delete_success}  xpath=//*[@id="form"]/div/div/div/h2/b
+
 
 
 *** Test Cases ***
@@ -102,8 +101,4 @@ User info for new user
     Should Be Equal As Strings  ${actual_text3}   Logged in as ${user_name}
     Sleep  5s
 
-    #Delete the logged in user
-    Click Element  ${delete_account}
-    ${actual_text4}  Get Text  ${delete_success}
-    Should Be Equal As Strings  ${actual_text4}   ACCOUNT DELETED!
-    Click Element  ${continue_button}
+    Delete account after logging in

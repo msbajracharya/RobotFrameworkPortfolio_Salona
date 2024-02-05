@@ -1,11 +1,11 @@
 *** Settings ***
 Resource       ../../resources/new_user_creation.robot
 Resource        ../../resources/login_user.robot
+Resource       ../../resources/delete_account.robot
 
 
 *** Variables ***
 ${login_page}   xpath=//*[@id="form"]/div/div/div[1]/div/h2
-${login_email}  xpath=//*[@name="email"]
 ${login_password}  xpath=//*[@name="password"]
 ${login_button}  xpath=//*[@id="form"]/div/div/div[1]/div/form/button
 ${existing_user_validation}   xpath=//*[@id="form"]/div/div/div[3]/div/form/p
@@ -32,10 +32,5 @@ User login with existing email and password
     ${actual_text2}  Get Text  ${existing_user_validation}
     Should Be Equal As Strings  ${actual_text2}   Email Address already exist!
     
-    #To prevent the dublication, the created user is logged in and deleted
-    User login with email and password
-    Click Element  ${delete_account}
-    ${actual_text4}  Get Text  ${delete_success}
-    Should Be Equal As Strings  ${actual_text4}   ACCOUNT DELETED!
-    Click Element  ${continue_button}
+    Delete account after logging in
     
