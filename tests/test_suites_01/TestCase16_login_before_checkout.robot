@@ -39,7 +39,7 @@ Login user and Checkout to complete order
     Should Be Equal As Strings  ${actual_text3}   Logged in as ${user_name}
     Sleep  5s
     
-     Mouse Over    ${first_product} 
+    Mouse Over    ${first_product} 
     Click Element    ${first_product_cart}
     Wait Until Element Is Visible    ${modal_box}
     Click Element    ${continue_shopping}

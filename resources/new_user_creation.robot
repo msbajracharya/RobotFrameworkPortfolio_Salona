@@ -5,7 +5,7 @@ Resource       disableAds.robot
 
 *** Variables ***
 ${page_indicate}   xpath=//*[contains(text(),'Full-Fledged practice website for Automation Engineers')]
-${signup_login_button}  xpath=//*[@id="header"]/div/div/div/div[2]/div/ul/li[4]/a
+${signup_login_button}  xpath=//div/ul/li[4]/a
 ${signup_text_locator}  xpath=//*[contains(text(),'New User Signup!')]
 ${new_user_name_field_locator}  xpath=//*[@name="name"]
 ${new_user_email_field_locator}  xpath=//input[@data-qa='signup-email']

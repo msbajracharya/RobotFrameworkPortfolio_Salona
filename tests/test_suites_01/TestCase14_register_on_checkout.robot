@@ -19,7 +19,7 @@ ${view_cart}    xpath=//*[@id="cartModal"]/div/div/div[2]/p[2]/a/u
 ${proceed_to_checkout}    xpath=//*[@id="do_action"]/div[1]/div/div/a
 ${checkout_modal_box}    xpath=//*[@id="checkoutModal"]/div/div
 ${register_link}    xpath=//*[@id="checkoutModal"]/div/div/div[2]/p[2]/a
-${cart_page}    xpath=//*[@id="header"]/div/div/div/div[2]/div/ul/li[3]/a
+${cart_page}    xpath=//div/ul/li[3]/a
 ${description_textarea}    xpath=//*[@id="ordermsg"]/textarea
 ${place_order}    xpath=//*[@id="cart_items"]/div/div[7]/a
 
